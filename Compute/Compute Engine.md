@@ -4,6 +4,7 @@ Google Compute Engine lets you create and run virtual machines on Google infrast
 
 [Google Compute Engine Concepts](https://cloud.google.com/compute/docs/concepts)
 
+
 ## Features
 
 * Large-scale IaaS workloads.
@@ -51,30 +52,39 @@ Google Compute Engine lets you create and run virtual machines on Google infrast
 * May be terminated at any time:
   * No charge if within 10 min.
   * 24 hours max run time.
-  * 30 second termination notification.
+  * 30 second termination notification. (shutdown script)
+  * GCE choose the youngest one to terminate
 * No live migrate.
 * No auto restart.
 * Can request a CPU quota be split between regular and preemption.
+* Good for large-batch workloads
 
 ## Disks
 
-* HDD or SSD.
-* Live disk resizing (bigger, not smaller).
+* HDD, SSD, or local SSD
+* Live disk resizing (bigger, not smaller), process (increase size -> resize file system)
 * Supports attachment to multiple VMs in read only mode.
 * Automatic Checksums.
-* Automatic Encryption (can supply own keys).
-* Persistent Disk:
+* Automatic Encryption (google key or custom key).
+* Disk size and performance are directly related. Larger disks can handle more IOPS
+* Persistent Disk - Replicated and highly available
   * Network storage appearing as a block device.
-  * Attached to the VM through the network interface.
+  * Attached to the VM through the network interface (attach -> mount -> format)
+  * Lifecycle: unattached, attached read-only, attached read-write
   * Durable storage.
-  * Bound to zone.
+  * Bound to zone (disk must live in the same zone as compute instance).
   * Bootable.
-  * Snapshots.
+  * Snapshots
+    * differential storage
+    * can not read or write from snapshot directly, create disk from snapshot instead
+    * Ideal snapshot sequence: stop applications that write data -> flush disk buffers -> freeze disk -> take snapshot
 * Local SSD Disk:
   * Physically attached to VM.
   * Not available on shared core.
   * Faster than Persistent disk.
+  * More expensive than persistent disk
   * Ephemeral: data survives a restart but not a stop or terminate.
+  * Not replicated, not persistent
   * 3TB (375GB * 8).
 * RAM Disk:
   * tmpfs
@@ -131,8 +141,9 @@ Google Compute Engine lets you create and run virtual machines on Google infrast
 
 ## Pricing
 
+* Compute capacity + Storage capacity + Network traffic
 * Per minute billing with a 10 minute minimum.
-* Sustained use discounts.
+* Sustained use discounts (up to 30%).
 * Preemptible instances:
   * Live at most 24 hours.
   * Can be pre-empted with a 30 second notification via API.
@@ -142,11 +153,13 @@ Google Compute Engine lets you create and run virtual machines on Google infrast
 * Committed use discounts (1 year or 3 years).
 * Inferred instance discounts: Usage of VMs of the same machine type in the same zone are combined as if they were one machine.
 * No charge for stopped instances apart from attached disks and IPs.
-* Same charge for different CPU architectures. Choose your region wisely.
+* Same charge for different CPU architectures. 
+* Price differ from region to region. Choose your region wisely. US regions normally cheaper
 
 ## Autoscaling
 
 * Automatically scale the number of instances in the managed instance group based on workload.
+* Instance template
 * Can reduce costs by shutting down instances when not required.
 * Create one autoscaler per managed instance group.
 * Support both zone-based managed instance groups or regional managed instance groups.
