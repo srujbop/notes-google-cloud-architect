@@ -1,5 +1,9 @@
 # Google Cloud IP Addresses
 
+* ephemeral vs static IP addresses
+
+* IP address rage defined by CIDR block can be espanded by increading the prefix length. IP range can not be decreased.
+
 Virtual machines and other products that use VM instances get two IP addresses.
 
 ## Internal IP Address
