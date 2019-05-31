@@ -1,18 +1,18 @@
 # Google Cloud Networking
 
-Google Cloud Platform is build on top of a Software Defined Network.
-It is built on a global fiber infrastructure. It is one of the world's largest and fastest networks.
+Google Cloud Platform is build on top of a __Software Defined Network__.
+It is built on a __global fiber infrastructure__. It is one of the world's largest and fastest networks.
 
 ## Virtual Private Cloud Network
 
-A project can contain up to 5 VPC networks.
+A project can contain up to __5__ VPC networks.
 
 VPC Network Details:
 
 * Subnets:
   * Are the logical isolation partitions for the VPC network.
   * They contain a defined IP range. Instances and other resource draw from this range.
-  * Are regional and span zones in the region.
+  * Are __regional__ and span zones in the region.
 * Projects are provided with a default network:
   * Has preset configurations and firewall rules.
   * Can be customized.
