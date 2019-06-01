@@ -25,13 +25,17 @@ With Cloud Functions you write simple, single-purpose functions that are attache
   * Stackdriver logging
 * Synchronous (request, response) vs asynchronous (event, callback)
 * Package code --> Upload to cloud storage --> deploy
+* Uploading cloud function code:
+  * Inline editor
+  * Zip upload
+  * Cloud source repository
 * Goolge source repository
 
 ## Pricing
 
 * number of invocations
 * networking cost
-* compute time and memory time
+* compute time and memory time (128GB to 2GB)
 * free-tier
 
 ## Limitation
