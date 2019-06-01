@@ -63,13 +63,13 @@ URL: version.service.your-project-id.appspot.com
 
 ## Deployment
 
-gcloud app deploy
-gcloud app deploy --no-promote
-gcloud app services set-traffic
---splits
---migrate
+* gcloud app deploy
+* gcloud app deploy --no-promote
+* gcloud app services set-traffic
+* --splits
+* --migrate
 
-promite_by_default
+promote_by_default true/false
 
 ## Scaling
 
