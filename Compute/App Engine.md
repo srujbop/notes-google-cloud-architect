@@ -4,6 +4,8 @@ App Engine is a PaaS for building scalable web applications and mobile backends.
 
 App Engine Standard Environment vs App Engine Flex
 
+Resident instance vs dynamic instance
+
 App Engine manages the hardware, networking infrastructure, load balancing, monitoring and scaling, required to run your code.
 
 __Auto scaling__ is a key selling point.
@@ -24,6 +26,8 @@ Sandbox constraints:
 ## Flexible Environment
 
 Your code running in __Docker__ containers.
+
+Custom runtime
 
 You would choose the flexible environment when your applications need more flexibility than the standard environment.
 
@@ -47,7 +51,7 @@ Application, Service, Version, Instance
 
 One project is limited to one application (one project, one purpose)
 
-One application can have multile services
+One application can have multile services, contained inside a region
 
 One service can have multiple versions
 
@@ -60,10 +64,16 @@ URL: version.service.your-project-id.appspot.com
 ## Deployment
 
 gcloud app deploy
+gcloud app deploy --no-promote
+gcloud app services set-traffic
+--splits
+--migrate
 
 promite_by_default
 
 ## Scaling
+
+Configured inside app.yml
 
 App Engine Standard
 
@@ -73,8 +83,8 @@ App Engine Standard
   * concurrent requests (default 8, can go up to 80)
 
 * Basic Scaling
-  * max number of instances
-  * how long to keep an idel instance before turning it off
+  * max_instances: max number of instances
+  * idle_timeout: how long to keep an idel instance before turning it off
 
 * Manual Scaling - configure exactly the number of instances
 
@@ -100,4 +110,5 @@ Larger class can handle more concurrent requests
 * Store data with Cloud Datastore - nonrelational storage system, auto authentication, no dependency to install
 * Memcached service - shared service, some limitations
 * Deferring tasks with Task Queues
-* Traffic spliting - A/B testing
+* Traffic spliting - A/B testing. Based on IP address, HTTP cookie (preferred, GOOGAPPUID), Random selection
+* Traffic migration 
