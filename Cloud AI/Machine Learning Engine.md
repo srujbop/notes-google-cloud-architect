@@ -21,7 +21,7 @@ Online prediction, batch prediction
 * Fully managed machine learning service.
 * Uses open-source TensorFlow to run neural network models.
 * Integrates with BigQuery and Cloud Storage.
-* Pre-trained machine learning models including vision, speech, and translation.
+* Pre-trained machine learning models including vision, natural langueage analysis, speech, and translation.
 
 ## When to Use
 
