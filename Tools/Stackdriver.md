@@ -1,14 +1,15 @@
 # Google Stackdriver
 
-[Google Stackdriver](https://cloud.google.com/stackdriver/) provides Monitoring, logging, and diagnostics for applications on Cloud Platform and AWS.
+[Google Stackdriver](https://cloud.google.com/stackdriver/) provides Monitoring, logging, and diagnostics (tracing & debugging) for applications on __GCP__, __AWS__ and __on-premise__ resources.
 
 ## Features
 
-* Monitor Google Cloud Platform and AWS.
+* Monitor Google Cloud Platform, AWS and on-premise resources.
 * Find and fix issues fast.
 * Full-stack insights.
 * Native Google integration.
 * Metrics explorer enables monitoring resources without creating charts.
+* Daily or weekly reports via email
 
 ## Stackdriver Organization
 
@@ -32,8 +33,10 @@
 
 * Create Dashboards, Charts, and Alerts.
 * Uptime and health checks.
-* Monitoring agent installed into VMs.
-* Custom metrics can be added to your code.
+* Monitoring agent (monitoring agent & logging agent) installed into VMs.
+* Custom metrics can be added to your code. Two ways to create custom metrics:
+  * OpenCensus
+  * StackDriver's monitoring API
 
 ### Uptime Monitoring
 
@@ -61,8 +64,11 @@ Condition => Incident => Notification
 * Avoid a single point of failure in your alert strategy.
 * Customize alerts.
 * Avoid noise.
+* __Policy__ consists of conditions that determine when to issue an alert or notification.
+* A policy can have one or more __notification channels__
+* __Documentation__ helps devops engineer understand the problem and provide information on how to solve the issue
 
-## Logging
+## Logging - Managed service
 
 * Platform, system, and application logs.
   * Public API to write to logs.
@@ -82,7 +88,9 @@ _Note: Agent needs to be installed for application logs._
   * Error dashboards.
   * Code including Java, Python, JavaScript, Ruby, C#, PHP, and Go.
 
-## Tracing
+## Tracing - Cloud Trace
+
+Cloud Trace is a distributed tracing system for collecting latency data from an application.
 
 * Near real time.
 * Latency reporting including data from:
@@ -91,7 +99,9 @@ _Note: Agent needs to be installed for application logs._
   * Applications instrumented with Stackdriver Trace SDKs.
 * Per-URL latency sampling.
 
-## Debugging
+## Debugging - Cloud Debugger
+
+Cloud Debugger allows developers to inject log messages on the fly without altering source code or take snapshots of the state of an application.
 
 * Inspect an application without stopping it or slowing it down significantly.
 * Cloud App Engine Standard or Flexible.
