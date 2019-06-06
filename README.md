@@ -1,3 +1,15 @@
+# Summary
+
+* __CloudSQL__ - __relational__, transactional, OLTP. Not low-latency retrieval of time-series data.
+
+* __Bigtable__ - optimized for __time-series data__. highly available, __low-latency__. Managed service.
+
+* __BigQuery__ - serverless, highly-scalable, and cost-effective cloud __data warehouse and analytics__ with an in-memory BI Engine and __machine learning__ built in. Higher latency than Bigtable. There is quota.
+
+* __DataProc__ - optimized to create ephemeral job-scoped clusters in around 90 seconds. This speed of deployment means that a single job can have a dedicated cluster, containing just the resources needed to run the job, that is shut down upon job completion.
+
+* __Cloud Storage__ - Cheapest per-byte storage offered by google 
+
 # Google Cloud Architect Notes
 
 This repository contains my notes for studying the Google Cloud Platform to sit the Cloud Architect exam.
