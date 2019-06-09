@@ -7,7 +7,7 @@
 | Scaling       | Server Autoscaling | Cluster             | Autoscaling                 | Autoscaling          | Serverless                 |
 | Primary Use   | VM Workloads       | Container Workloads | Web/APIs                    | Web/APIs, Container  | Lightweight Event Actions  |
 
-_Note: GKE is a Container First system while GAE is a Code First system._
+_Note: GKE is a __Container First__ system while GAE is a __Code First__ system._
 
 ## Container Differentiators
 
