@@ -1,6 +1,6 @@
 # App Engine
 
-App Engine is a PaaS for building scalable web applications and mobile backends.
+App Engine is a PaaS for building scalable __web applications__ and __mobile backends__.
 
 App Engine Standard Environment vs App Engine Flex
 
