@@ -1,3 +1,24 @@
+# Summary
+
+* __CloudSQL__ - __relational__, transactional, OLTP. MySQL & PostgreSQL. Not low-latency retrieval of time-series data.
+
+* __Bigtable__ - Petabyte-scale. Optimized for __time-series data__. highly available, __low-latency__. Managed service.
+
+* __Datastore__ - Horizontally scalable document DB
+
+* __BigQuery__ - serverless, highly-scalable, and cost-effective cloud __data warehouse and analytics__ with an in-memory BI Engine and __machine learning__ built in. Higher latency than Bigtable. There is quota.
+
+* __DataProc__ - optimized to create ephemeral job-scoped clusters in around 90 seconds. This speed of deployment means that a single job can have a dedicated cluster, containing just the resources needed to run the job, that is shut down upon job completion.
+
+* __Cloud Memorystore__ - Managed Redis
+
+* __Cloud Spanner__ - Horizontally scalable relational DB
+
+* __Cloud Storage__ - Cheapest per-byte storage offered by google 
+
+* __Cloud Filestore__ is a managed (serverless) file storage service for applications that require a filesystem interface and a shared filesystem for data. Filestore gives users a simple, native experience for standing up managed __Network Attached Storage (NAS)__ with their Google Compute Engine and Kubernetes Engine instances. The ability to fine-tune Filestore’s performance and capacity independently leads to predictably fast performance for your file-based workloads.
+
+
 # Google Cloud Storage
 
 There are a number of different storage options in the Google Cloud Platform.
