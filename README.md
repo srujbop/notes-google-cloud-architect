@@ -1,13 +1,11 @@
 
 # Google Cloud Architect Notes
 
-This repository contains my notes for studying the Google Cloud Platform to sit the Cloud Architect exam.
+This repository contains study notes from grantcarthew (https://github.com/grantcarthew/notes-google-cloud-architect). I added my notes for studying the Google Cloud Platform to sit the Cloud Architect exam.
 
 I passed the exam and am leaving this repository here for anyone else to use.
 
-Either fork this repository or raise an issue and I will make you a contributor.
-
-__These notes have not been proof read or polished in any way. They are accurate as of March 2018.__
+__These notes have not been proof read or polished in any way. They are accurate as of June 2019.__
 
 ## Index
 
