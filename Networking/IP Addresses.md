@@ -5,7 +5,7 @@ Virtual machines and other products that use VM instances get two IP addresses.
 ## Internal IP Address
 
 * Allocated from a subnet range via DHCP.
-* DHCP resovation is renewed every 24 hours.
+* DHCP reservation is renewed every 24 hours.
 * Automatically registered with a network-scoped DNS resolver.
   * FQDN: [hostname].c.[project-id].internal
   * Resolves internal and external addresses
