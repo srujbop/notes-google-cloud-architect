@@ -2,7 +2,30 @@
 
 [Cloud Bigtable](https://cloud.google.com/bigtable/docs/overview) is a fully managed, high performance NoSQL database service for large analytical and operational workloads.
 
+Fast access to extremly large datasets (>terabytes, petabytes) while updating these datasets continuouesly.
+
+HBase - opensource implementation based on Bigtable paper
+
+Began as the storage system for the __web search index__ at Google
+
+Designed to handle large amounts of replicated, rapidly changing data and can be queried quickly wiht high concurrency (high throughput), while maintaining string consistency throughput.
+
+A sparse, distributed, persistent, multi-dimentional sorted map (can go back in time)
+
+Rebalances data
+
 It supports HBase API for access and native compatibility with Hadoop systems.
+
+## Design goals
+
+* Large amount of (replicated) data 
+* Low latency, high throughput (millions of queries per second)
+* Rapidly changing data
+* History of data changes
+* Strong consistency
+* Row-level transactions (does not need ttransactional semantics across multiple rows)
+* Subset selection
+
 
 ## Features
 
@@ -18,6 +41,7 @@ It supports HBase API for access and native compatibility with Hadoop systems.
 * Data access can be through Application API, Streaming, or Batch Processing.
 * Integrates with Cloud Dataflow and Cloud Dataproc.
 * On-premise to cloud base operations supported.
+* Can use Hadoop to both export and reimport data using Google Cloud Dataproc - a managed Hadoop service
 
 ## When to Use
 
@@ -28,6 +52,28 @@ Bigtable also excels for:
 * MapReduce operations.
 * Stream processing / analytics.
 * Machine learning applications.
+
+* Terabytes or more data
+* Usage sustained over a long period of time
+* Tens to hundreds of thousands of queries per second
+* Basic access to data - lookups and simple scan across keys
+
+## Architecture
+
+Instances, clusters, nodes, tablets (can be combined, split, and moved to other nodes)
+
+## Limitations
+
+* No secondary indexes (no "where")
+* No multirow transactional semantics
+* Have to think ahead about what type of questions you will want to ask about your data
+* Have to choose row-key carefully to maintain performance
+* Need to choose schema carelfully
+* Costly - minimum $1400 per month (vs $30 minimum for Cloud SQL)
+
+## Pricing
+
+compute + storage + network
 
 ## ELI5
 
