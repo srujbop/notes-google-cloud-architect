@@ -8,6 +8,10 @@ Either fork this repository or raise an issue and I will make you a contributor.
 
 __See the [Change Log](#change-log) below for update details.__
 
+## Instructions to update the fork from master. 
+
+https://www.sitepoint.com/quick-tip-sync-your-fork-with-the-original-without-the-cli/
+
 ## Recommendations
 
 Use the GitHub code view to locate documents.
